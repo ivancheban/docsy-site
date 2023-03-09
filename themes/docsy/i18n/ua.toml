@@ -43,3 +43,9 @@ other = "Створити запит"
 other = "Створити запит по проекту"
 [post_posts_in]
 other = "Публікацій у"
+[post_view_this]
+other = "Переглянути джерело"
+[post_less_than_a_minute_read]
+other = "Менше хвилини читання"
+[post_reading_time]
+other = "хв. читання"
