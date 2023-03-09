@@ -1,0 +1,45 @@
+
+
+# UI strings. Buttons and similar.
+
+[ui_pager_prev]
+other = "Попередня"
+
+[ui_pager_next]
+other = "Наступна"
+
+[ui_read_more]
+other = "Докладніше"
+
+[ui_search]
+other = "Пошук по сайту…"
+
+# Used in sentences such as "Posted in News"
+[ui_in]
+other = "у"
+
+# Footer text
+[footer_all_rights_reserved]
+other = "Усі права застережено"
+
+[footer_privacy_policy]
+other = "Політика конфіденційності"
+
+
+# Post (blog, articles etc.)
+[post_byline_by]
+other = "Автор"
+[post_created]
+other = "Опубліковано"
+[post_last_mod]
+other = "Останні зміни"
+[post_edit_this]
+other = "Редагувати цю сторінку"
+[post_create_child_page]
+other = "Створити дочірню сторінку"
+[post_create_issue]
+other = "Створити запит"
+[post_create_project_issue]
+other = "Створити запит по проекту"
+[post_posts_in]
+other = "Публікацій у"

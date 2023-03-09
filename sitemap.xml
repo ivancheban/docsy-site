@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/</loc>
+
+      <lastmod>2021-07-18</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/</loc>
+
+      <lastmod>2021-07-18</lastmod>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/jekyll/</loc>
+
+      <lastmod>2021-07-18</lastmod>
+
+      <priority>0.3</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/jekyll-api/</loc>
+
+      <lastmod>2021-07-18</lastmod>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/online-resume/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/hugo-install/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/hugo-api/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/remove-hugo/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/static-site-generators/swagger/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/vale/install-vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/vale/configure-vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/vale/vale-styleguides/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/madcap-flare/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/madcap-flare/connect-madcap-to-git/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/docs/madcap-flare/build-error/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/</loc>
+
+      <changefreq>weekly</changefreq>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/jekyll/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/jekyll-api/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/online-resume/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/hugo-install/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/remove-hugo/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/static-site-generators/hugo-api/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/vale/install-vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/vale/configure-vale/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/vale/vale-styleguides/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/madcap-flare/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/madcap-flare/connect-madcap-to-git/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+  <url>
+
+      <loc>https://docsy-site.netlify.app/ua/docs/madcap-flare/build-error/</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+</urlset>
