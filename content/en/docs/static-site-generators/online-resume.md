@@ -1,7 +1,7 @@
 ---
 title: "Create online CV with Jekyll"
 linkTitle: "Online CV with Jekyll"
-weight: 2
+weight: 3
 description: >
   One of my first Jekyll sites was my resume available online. While many HRs and recruiters still prefer the classic PDF, I decided to give the online thing a try. After all, it’s so easy just to send the link to your CV. In this article, I will show you how to create your online CV using Jekyll as a static site generator and Vercel for deploying and hosting your site.
 ---

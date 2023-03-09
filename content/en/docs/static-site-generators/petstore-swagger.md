@@ -1,7 +1,7 @@
 ---
-title: "Pet Store API"
+title: "Pet Store Swagger API"
 type: swagger
-weight: 8
+weight: 9
 description: Reference for the Pet Store API
 ---
 

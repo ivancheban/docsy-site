@@ -1,6 +1,6 @@
 ---
 title: "Gatsby API site"
-weight: 7
+weight: 8
 description: Reference API documentation site built with Gatsby. The theme is based on Slate and Stripes API docs.
 ---
 
