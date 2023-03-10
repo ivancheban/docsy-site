@@ -199,4 +199,8 @@ To trigger deployment to GitLab Pages:
 
     ![Pages](../img/pages.png)
 
-1. Click the 
+2. Click the site link deployed to GitLab Pages.
+
+    [https://ivancheban.gitlab.io/my-test-site](https://ivancheban.gitlab.io/my-test-site)
+
+    ![Pages link](../img/pages-link.png)
