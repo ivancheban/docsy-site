@@ -19,7 +19,7 @@ The goal is to deploy or publish your Docusaurus site to GitLab Pages. I use [th
 
 With either of these two options you're ready to publish the Docusaurus site on GitLab Pages.
 
-## Create a GitLab repo
+### Create a GitLab repo
 
 > First, you need to create your GitLab repo, if you don't have one.
 
@@ -47,7 +47,7 @@ Your empty repo is created.
 
 ![Empty repo](../img/created-repo.png)
 
-## Push your Docusaurus project to the remote server
+### Push your Docusaurus project to the remote server
 
 To initialize a local Git repo in your Docusaurus project folder and push it to the newly created repo:
 
@@ -101,7 +101,7 @@ To initialize a local Git repo in your Docusaurus project folder and push it to 
 
     ![Repo with upload files](../img/repo-uploaded.png)
 
-## Fork project
+### Fork project
 
 > Another way (much easier) is to fork my project from GitLab.
 
