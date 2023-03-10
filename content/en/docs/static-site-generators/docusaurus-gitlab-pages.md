@@ -35,9 +35,9 @@ To create a GitLab repo:
 
    b. Project slug - your repo name.
 
-   c. Select the **Public** check box.
+   c. Select the **Public** checkbox.
 
-   d. Remove selection from the **Initialize repository with a README** check box.
+   d. Remove selection from the **Initialize repository with a README** checkbox.
 
    e. Select **Create project**.
 
