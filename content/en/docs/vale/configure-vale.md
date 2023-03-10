@@ -46,5 +46,5 @@ git clone https://github.com/errata-ai/vale-boilerplate.git
 
 Alternatively, you can download the `vale-boilerplate` folder to your computer from [this repository](https://github.com/errata-ai/vale-boilerplate).
 
-![img](../img/vale-boilerplate-repo.png)
+![img](/docs/img/vale-boilerplate-repo.png)
 
