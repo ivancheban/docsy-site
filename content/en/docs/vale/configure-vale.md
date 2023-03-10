@@ -28,7 +28,7 @@ Before you start configuring Vale:
     vale --v
     ```
 
-    If you don't have Vale, see how to [Install Vale](./install-vale.md).
+    If you don't have Vale, see how to [Install Vale](../install-vale).
 
 3. Check that VSCode or other IDE editor is installed. See [Instructions for VSCode editor](../../static-site-generators/jekyll#vscode-editor).
 
