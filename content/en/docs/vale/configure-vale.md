@@ -20,7 +20,7 @@ Before you start configuring Vale:
     git version
     ```
 
-    If you don't have Git, see how to [Install Git client](../../docs/static-site-generators/jekyll.md#git-client).
+    If you don't have Git, see how to [Install Git client](../../static-site-generators/jekyll#git-client).
 
 2. Check that Vale is installed:
 
@@ -30,7 +30,7 @@ Before you start configuring Vale:
 
     If you don't have Vale, see how to [Install Vale](./install-vale.md).
 
-3. Check that VSCode or other IDE editor is installed. See [Instructions for VSCode editor](../../docs/static-site-generators/jekyll.md#vscode-editor).
+3. Check that VSCode or other IDE editor is installed. See [Instructions for VSCode editor](../../static-site-generators/jekyll#vscode-editor).
 
 4. Use your repository with Markdown files or use [this test repository](https://github.com/errata-ai/vale-boilerplate) with Vale already configured.
 
