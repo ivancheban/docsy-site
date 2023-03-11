@@ -199,8 +199,12 @@ To trigger deployment to GitLab Pages:
 
     ![Pages](../img/pages.png)
 
-2. Click the site link deployed to GitLab Pages.
+1. Click the site link deployed to GitLab Pages.
 
     [https://ivancheban.gitlab.io/my-test-site](https://ivancheban.gitlab.io/my-test-site)
 
     ![Pages link](../img/pages-link.png)
+
+Your site is online. The deployment is triggered automatically when you push changes to your repo. You can view the pipeline for each deployment in **CI/CD > Pipelines** section.
+
+![Pipelines](../img/pipelines.png)
