@@ -3,7 +3,7 @@ title: "Deploy Docusaurus site to GitLab Pages"
 linkTitle: "Deploy Docusaurus site to GitLab Pages"
 weight: 11
 description: >
-  In this article, I explain how to publish a Docusaurus site to GitLab Pages using a CI configuration file. This is an alternative way to deploy the Docusaurus site on your comapny GitLab or your private GitLab account.
+  In this article, I explain how to publish a Docusaurus site to GitLab Pages using a CI configuration file. This is an alternative way to deploy the Docusaurus site on your company GitLab or your private GitLab account.
 ---
 
 {{% pageinfo %}}
@@ -187,7 +187,7 @@ To create a CI (Continuous Integration) configuration file:
 
 ## Deploy site to GitLab Pages
 
-> Now you have the Docusaurus project—locally and on the remore server—with the CI configuration file. It's time to trigger deployment.
+> Now you have the Docusaurus project—locally and on the remote server—with the CI configuration file. It's time to trigger deployment.
 
 To trigger deployment to GitLab Pages:
 
@@ -195,7 +195,7 @@ To trigger deployment to GitLab Pages:
 
 1. Commit and push your changes.
 
-1. Go to **Deplyments > Pages** in GitLab repo.
+1. Go to **Deployments > Pages** in GitLab repo.
 
     ![Pages](../img/pages.png)
 
