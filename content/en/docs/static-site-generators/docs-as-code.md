@@ -46,13 +46,13 @@ An experienced Google tech writer Tom Johnson [writes](https://idratherbewriting
 
 * **Run validation checks.** Like developers, tech writers test the documentation for compliance with certain requirements: no broken links, Vale linter with rules for checking compliance with the requirements of Microsoft's style guides, Google and their own style guides. I wrote about this in my [previous article](../vale/vale-styleguides).
 
-* **Manage docs using processes similar to engineers (Scrum, Agile, Kanban).** Like developers, tech writers work in sprints (sprint is a period that usually lasts one month, during which developers deliver part of the developed functionality to demo to the customer the work done). Tech writers use Jira or other task tracker and perform appropriate Scrum ceremonies (daily standup, Sprint Planning, Retro , etc.). Often tech writers link their tasks of documenting features to the tasks of developers.
+* **Manage docs using processes similar to engineers (Scrum, Agile, Kanban).** Like developers, tech writers work in sprints (sprint is a period that usually lasts one month, during which developers deliver part of the developed functionality to demo to the customer the work done). Tech writers use Jira or other task tracker and perform appropriate Scrum ceremonies (daily standup, Sprint Planning, Retro, etc.). Often tech writers link their tasks of documenting features to the tasks of developers.
 
 The process of developing a documentation site is generally similar to the process of developing code. Next, we install the necessary *docs-as-code* tools in practice, generate a documentation site and publish it on the Internet.
 
 ## Docusaurus static site generator
 
-Why did I choose [Docusaurus](https://docusaurus.io/docs) as the static site generator (SSG) for the documentation site? Although my favorite site generator is Hugo, which I use for my own pet project (this site), configuring such a site, although well described in the documentation, is time consuming. Instead, you can configure a Docusaurus-built site very quickly—in just a few minutes you can have a local documentation site and start writing there in the Markdown files. Of course, it'll take a little longer to configure the CI/CD pipeline and customize the CSS for your own color schemes, fonts, images, etc., and then publish the site online. But not much more.
+Why did I choose [Docusaurus](https://docusaurus.io/docs) as the static site generator (SSG) for the documentation site? Although my favorite site generator is Hugo, which I use for my own pet project (this site), configuring such a site, although well described in the documentation, is time consuming. Instead, you can configure a Docusaurus-built site very quickly—in just a few minutes you can have a local documentation site and start writing there in the Markdown files. It'll take a little longer to configure the CI/CD pipeline and customize the CSS for your own color schemes, fonts, images, etc., and then publish the site online. But not much more.
 
 To install and run Docusaurus:
 
@@ -92,7 +92,7 @@ To install and run Docusaurus:
 
 ## Adjust the appearance of the site
 
-So, we launched the site locally in the browser. The site project folder with all the necessary files is in my case: `c:\Users\Ivan_Cheban\my-docusaurus-projects\my-site`. We will now change:
+So, you launched the site locally in the browser. The site project folder with all the necessary files is in my case: `C:\Users\Ivan_Cheban\my-docusaurus-projects\my-site`. We will now change:
 
 - The name of the site
 
@@ -114,7 +114,7 @@ To change the site name:
 
 3. Change the site name `title: 'My Site'` to your own. For example: `Documentation site`.
 
-    {{< alert title="Note" >}}All changes are immediately reflected in the browser, because we launched the site on a local server in the live reload mode.{{< /alert >}}
+    {{< alert title="Note" >}}All changes are immediately reflected in the browser, because you launched the site on a local server in the live reload mode.{{< /alert >}}
 
 4. In the same file below, change the site name `title: 'My Site'` in the navigation menu.
 
@@ -184,7 +184,7 @@ To change the hierarchical location of the article in the sidebar, change the va
 
 To open another article after going from the home page, change the path to the desired article in the `my-site\src\pages\index.js` file.
 
-For example, we'll show first the **Create a Page** article in the `c:\Users\Ivan_Cheban\my-docusaurus-projects\my-site\docs\tutorial-basics\create-a-page.md` file. To do this, change the value of the `to` parameter from `/docs/intro` to `/docs/tutorial-basics/create-a-page`.
+For example, show first the **Create a Page** article in the `c:\Users\Ivan_Cheban\my-docusaurus-projects\my-site\docs\tutorial-basics\create-a-page.md` file. To do this, change the value of the `to` parameter from `/docs/intro` to `/docs/tutorial-basics/create-a-page`.
 
 ![img](/docs/img/first-page.webp)
 
@@ -200,7 +200,7 @@ Next, rename the Markdown files in the `my-docs` folder.
 
 ### Order of documentation sections
 
-To define the order of the sections with documentation articles, change the `position` parameter in the `C:\Users\Ivan_Cheban\my-docusaurus-projects\my-site\docs\tutorial-basics\_category_.json` file. For example. change the order of `tutorial-basics` and `tutorial-extras` sections. To do this, change 3 to 2 for `tutorial-basics` and 2 to 3 for `tutorial-extras`.
+To define the order of the sections with documentation articles, change the `position` parameter in the `C:\Users\Ivan_Cheban\my-docusaurus-projects\my-site\docs\tutorial-basics\_category_.json` file. For example, change the order of `tutorial-basics` and `tutorial-extras` sections. To do this, change 3 to 2 for `tutorial-basics` and 2 to 3 for `tutorial-extras`.
 
 ![img](/docs/img/category-json.webp)
 
@@ -208,11 +208,11 @@ The order of these sections changes in the sidebar.
 
 ![img](/docs/img/changed-sections.webp)
 
-The article hierarchy within a section is changed using the `sidebar_postion` parameter, as described in [Hierarchy of articles in the documentation section](./#order-of-articles-in-the-documentation-section).
+The article hierarchy within a section is changed using the `sidebar_position` parameter, as described in [Hierarchy of articles in the documentation section](./#order-of-articles-in-the-documentation-section).
 
 ## Publish your documentation site
 
-So far, you've created a local site with documentation and can view it in the browser. It's time to publish it online so everybody can view it using the link. To do this, you need:
+So far, you've created a local site with documentation and can view it in the browser. It's time to publish it online, so everybody can view it using the link. To do this, you need:
 
 - Account in [GitHub](https://github.com/), where you'll load the source code of the project documentation.
 
@@ -290,7 +290,7 @@ Now you can publish your site with documentation using the Netlify service. It's
 
 7. Wait till your site is published (deploy).
 
-8. AS the site is published with a random name—such as `inspiring-benz-dc91fd`—change the site name to something more meaningful in the **Site settings**.
+8. As the site is published with a random name—such as `inspiring-benz-dc91fd`—change the site name to something more meaningful in the **Site settings**.
 
     ![img](/docs/img/site-settings-netlify.webp)
 
@@ -308,11 +308,11 @@ Now you can publish your site with documentation using the Netlify service. It's
 
 If you followed the steps in the previous sections, you have published your site on the Internet. Now I explain how to automatically update your site with documentation using the CI/CD pipeline.
 
-In fact, automatic pipeline is already set up—Netlify has created a hook in your GitHub repository and will track any changes. Once you commit and push changes from your local project to the GitHub repository, Netlify begins the process of building and deploying the site. It doesn't take much time (1-2 minutes), because everything is cached, and only delta is deployed—changes between the original and current version of the files.
+In fact, automatic pipeline is already set up—Netlify has created a hook in your GitHub repository and will track any changes. Once you commit and push changes from your local project to the GitHub repository, Netlify begins the process of building and deploying the site. It doesn't take much time (1–2 minutes), because everything is cached, and only delta is deployed—changes between the original and current version of the files.
 
-Try changing something in the files locally, and then repeat the steps for **Git: Commit All** and **Git: Push** described in the [Upload to GitHub](./#upload-to-github) section .
+Try changing something in the files locally, and then repeat the steps for **Git: Commit All** and **Git: Push** described in the [Upload to GitHub](./#upload-to-github) section.
 
-All changes are published to the master branch. If you create a `develop` branch or other branch, the changes you make to those branches will not be reflected on the site because the `master` branch is considered *Production*. Of course, all this is adjustable. However, I suggest leaving all the configuration processes in the local infrastructure to the specialists who deal with it: devops or system engineers. They will create scripts and environments for publishing the local instance of the site (useful for viewing articles before publication for production). Specialists will also configure the deployment server (Octopus or other), the location of file hosting (AWS S3 buckets or other).
+All changes are published to the master branch. If you create a `develop` branch or other branch, the changes you make to those branches won't appear on the site because the `master` branch is considered *Production*. Of course, all this is adjustable. However, I suggest leaving all the configuration processes in the local infrastructure to the specialists who deal with it: devops or system engineers. They will create scripts and environments for publishing the local instance of the site (useful for viewing articles before publication for production). Specialists will also configure the deployment server (Octopus or other), the location of file hosting (AWS S3 buckets or other).
 
 Your task is to create a demo for the documentation site to show how it works. Leadership will then decide whether to continue to use Confluence or other internal knowledge base. And it's possible that this site with documentation will be finalized by frontend engineers so that it serves as the main documentation site for your product.
 
