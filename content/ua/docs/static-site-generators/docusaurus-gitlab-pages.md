@@ -41,11 +41,11 @@ description: >
 
    e. Виберіть **Create project**.
 
-    ![Create a repo](/docs/img/create-project.png)
+    ![Create a repo](../img/create-project.png)
 
 Порожній репозиторій створено.
 
-![Empty repo](/docs/img/created-repo.png)
+![Empty repo](../img/created-repo.png)
 
 ### Завантажте ваш проєкт Docusaurus на сервер
 
@@ -59,7 +59,7 @@ description: >
 
     де `your-test-site` — це ім’я вашого репозиторію.
 
-    ![Git clone](/docs/img/git-clone.png)
+    ![Git clone](../img/git-clone.png)
 
 1. У командному рядку перейдіть до папки `your-test-site`.
 
@@ -67,7 +67,7 @@ description: >
     cd your-test-site
     ```
 
-    ![Go to folder](/docs/img/go-to-folder.png)
+    ![Go to folder](../img/go-to-folder.png)
 
 1. Змініть гілку у Git на `main`.
 
@@ -77,7 +77,7 @@ description: >
 
 1. Скопіюйте файли з папки вашого існуючого проєкту Docusaurus до папки `your-test-site` без прихованої папки `.git`.
 
-    ![Copy files](/docs/img/copy-files.png)
+    ![Copy files](../img/copy-files.png)
 
 1. У командному рядку додайте всі скопійовані файли:
 
@@ -99,7 +99,7 @@ description: >
 
 1. Оновіть сторінку GitLab з вашим репозиторієм у браузері, щоб побачити завантажені файли.
 
-    ![Repo with upload files](/docs/img/repo-uploaded.png)
+    ![Repo with upload files](../img/repo-uploaded.png)
 
 ### Створення власної копії проєкту
 
@@ -111,7 +111,7 @@ description: >
 
 1. Виберіть **Fork**.
 
-    ![Fork](/docs/img/fork.png)
+    ![Fork](../img/fork.png)
 
 1. Заповніть поля:
 
@@ -121,7 +121,7 @@ description: >
 
     c. Виберіть **Fork project**.
 
-    ![Fork project](/docs/img/fork-project.png)
+    ![Fork project](../img/fork-project.png)
 
 1. Склонуйте скопійований проєкт.
 
@@ -137,11 +137,11 @@ description: >
 
 1. Відкрийте свій проєкт з Docusaurus у VS Code.
 
-    ![Open project folder](/docs/img/open-project.png)
+    ![Open project folder](../img/open-project.png)
 
 2. Натисніть кнопку **New file**, щоб додати новий файл.
 
-    ![Add new file](/docs/img/new-file.png)
+    ![Add new file](../img/new-file.png)
 
 3. Уведіть ім’я та розширення файлу: `.gitlab-ci.yml`. Натисніть Enter.
     
@@ -177,11 +177,11 @@ description: >
     "build:gitlab": "docusaurus build --out-dir public",
     ```
 
-    ![Build](/docs/img/build-docusaurus.png)
+    ![Build](../img/build-docusaurus.png)
 
 6. Змініть значення параметру `baseUrl` у файлі `docusaurus.config.js` на `/my-test-site/`, де `my-test-site` — це ім’я вашого репозиторію.
 
-    ![Base url](/docs/img/base-url.png)
+    ![Base url](../img/base-url.png)
 
 7. Укажіть, які зміни внесли до файлів, і завантажте змінені файли на сервер: commit і push.
 
@@ -197,14 +197,14 @@ description: >
 
 1. Перейдіть до **Deployments > Pages** у репозиторії GitLab repo.
 
-    ![Pages](/docs/img/pages.png)
+    ![Pages](../img/pages.png)
 
 1. Перейдіть за посиланням опублікованого сайту в GitLab Pages.
 
     [https://ivancheban.gitlab.io/my-test-site](https://ivancheban.gitlab.io/my-test-site)
 
-    ![Pages link](/docs/img/pages-link.png)
+    ![Pages link](../img/pages-link.png)
 
 Ваш сайт опубліковано в інтернеті. Публікація (deployment) запускається автоматично, коли ви вносите зміни і завантажуєте змінені файли в репозиторій. Ви можете переглянути пайплайн для кожної публікації в розділі **CI/CD > Pipelines**.
 
-![Pipelines](/docs/img/pipelines.png)
+![Pipelines](../img/pipelines.png)
