@@ -35,10 +35,12 @@ To update Vale using Chocolatey:
 3. Update the Vale version.
 
     ```sh
-    choco update vale
+    choco upgrade vale
     ```
 
     This command updates Vale to the latest version of Vale stored as the [Chocolatey package](https://community.chocolatey.org/packages/vale).
+
+    ![img](/docs/img/choco-upgrade-vale.png)
 
 ## Update Vale manually
 
