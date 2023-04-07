@@ -113,7 +113,7 @@ Instead of entering `vale filename.md` in the VSCode terminal every time when yo
 
 2. Configure this extension:
 
-    * Specify the path to the project directory with the **.vale.ini** file. In my case, it's: `c:\Users\ivanc\test-vale`.
+    * Specify the path to the project directory with the **.vale.ini** file. In my case, it's: `c:\Users\ivanc\test-vale\.vale.ini`.
 
     ![img](/docs/img/vale-extension-config.png)
 
