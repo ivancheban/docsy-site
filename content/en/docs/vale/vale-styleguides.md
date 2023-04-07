@@ -72,7 +72,7 @@ How does it work?
 
     ![img](/docs/img/test-vale.png)
 
-6.	Install Vale: [installation instructions](https://docs.errata.ai/vale/install). Check if Vale is installed: `vale --v`.
+6. Install Vale: [installation instructions](https://docs.errata.ai/vale/install). Check if Vale is installed: `vale --v`.
 
     ![img](/docs/img/vale-v.png)
 
@@ -113,11 +113,7 @@ Instead of entering `vale filename.md` in the VSCode terminal every time when yo
 
 2. Configure this extension:
 
-    a. Select **Use Vale’s CLI instead of Vale Server**.
-
-    b. Specify the path to the project directory with the **.vale.ini** file. In my case, it's: `c:\Users\ivanc\test-vale`.
-
-    c. Enter `vale` for **Vale CLI: Path**.
+    * Specify the path to the project directory with the **.vale.ini** file. In my case, it's: `c:\Users\ivanc\test-vale`.
 
     ![img](/docs/img/vale-extension-config.png)
 
