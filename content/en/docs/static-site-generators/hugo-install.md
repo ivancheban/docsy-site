@@ -10,6 +10,20 @@ description: >
 Our goal is to install Hugo on a computer running Windows.
 {{% /pageinfo %}}
 
+## Install Go
+
+> Hugo is based on the Go or Golang programming language. You need to install Go before installing Hugo.
+
+To install Go:
+
+1. Check if Go is installed on your machine: `go version`.
+
+    ![Check Go version](/docs/img/go-version.png)
+
+1. If Go isn't installed, install it from this site:
+
+    https://go.dev/doc/install
+
 ## Install Chocolatey
 
 > First, go to the official [Hugo installation page](https://gohugo.io/getting-started/installing/). As you see, there's more than one way to skin a cat. I choose the Chocolatey option to install Hugo.

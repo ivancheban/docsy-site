@@ -10,7 +10,21 @@ description: >
 Наша мета — встановити Hugo на комп'ютері під управлінням Windows.
 {{% /pageinfo %}}
 
-## Встановіть Chocolatey
+## Установіть Go
+
+> Для роботи Hugo потрібна мова програмування Go або Golang.
+
+Щоб установити Go:
+
+1. Перевірте, чи встановлено Go на вашому комп’ютері: `go version`.
+
+    ![Check Go version](/docs/img/go-version.png)
+
+1. Якщо Go не встановлено, установіть пакет із сайту:
+
+    https://go.dev/doc/install
+
+## Установіть Chocolatey
 
 > Спочатку перейдіть на офіційну [сторінку встановлення Hugo](https://gohugo.io/getting-started/installing/). Як бачите, існує багато способів установки. Я вибираю варіант Chocolatey для встановлення Hugo.
 
