@@ -1,6 +1,5 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="canonical" href="https://tw-docs.com"/>
 {{ hugo.Generator }}
 
 {{ partialCached "favicons.html" . }}
@@ -26,6 +25,7 @@
 {{ if .Site.Params.prism_syntax_highlighting }}
 <!-- stylesheet for Prism -->
 <link rel="stylesheet" href="{{ "/css/prism.css" | relURL }}"/>
+<link rel="canonical" href="https://tw-docs.com"/>
 {{ end }}
 {{ partial "hooks/head-end.html" . }}
 <script src="https://hypothes.is/embed.js" async></script>
