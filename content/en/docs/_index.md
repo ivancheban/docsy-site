@@ -9,7 +9,7 @@ menu:
 {{% pageinfo %}}
 The Russians have started their bloody war in Ukraine, deliberately killing thousands of Ukrainian civilians.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cccGKGmG1h0?si=etUHDfG9HpEz9EHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="260" height="auto" src="https://www.youtube.com/embed/cccGKGmG1h0?si=etUHDfG9HpEz9EHz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 "This is Mariupol, a city in Ukraine where 400 000 people lived, thousands of them died, babies included. Try to remember this picture every time when making business with Russians.
 
