@@ -17,3 +17,7 @@ menu:
 <form target="_blank" action="https://sum20ua.com/List/Search/" method="get"><input id="SearchInput" name="searchWord" pattern="[A-za-zА-Яа-я\sЇїЁёЄєІі]+" type="text" value="" />
 <input type="submit" value=" Тлумачення ">
 </form>
+<br></br>
+Сайт для аудіофілів:
+
+<a href="https://audiophilesoft.com" title="Audiophile's Software"><img src="https://audiophilesoft.com/as-small.png" alt="Audiophile's Software" width="80" height="15"></a>
