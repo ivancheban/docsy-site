@@ -179,6 +179,11 @@ enable = true
 	url = "https://github.com/ivancheban/docsy-site"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
+[[params.links.user]]
+	name ="Audiophile's Software"
+	url = "https://audiophilesoft.com"
+	icon = "fas fa-music"
+        desc = "Audiophile's Software"
 
 [params.mermaid]
 enable = true
