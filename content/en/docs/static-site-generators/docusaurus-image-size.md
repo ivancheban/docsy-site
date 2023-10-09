@@ -44,7 +44,7 @@ To add images in your Markdown file with the HTML markup, store these images wit
 
 For more information, see [Static assets](https://docusaurus.io/docs/markdown-features/assets#static-assets) in the Docusaurus documentation.
 
-## Use HTML markup to center image
+## Use HTML markup to change image size
 
 To change the size of your image, use the following HTML markup in a Markdown file:
 
