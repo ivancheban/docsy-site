@@ -62,6 +62,12 @@ Where:
 
 * `<img src={...}` is the reference to the imported path with image.
 
+* `style={{width: 400}}` is where you specify the image size. `400` is the size in pixels. You can change the image size by changing this number.
+
 * Use inline CSS style because otherwise Docusaurus uses its own CSS styles.
+
+Here's the custom image size in my [Docusaurus example site](https://ivan-documentation-example.netlify.app/docs/intro):
+
+![Cat example](../img/cat-example.png)
 
 {{< alert title="Note" >}}When you use HTML for resizing image in Docusaurus, the [image zoom](../docusaurus-image-zoom) feature doesn't work.{{< /alert >}}
