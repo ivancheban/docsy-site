@@ -168,6 +168,6 @@ All the checks that I've discussed in the previous sections are for local Markdo
 
 By the way, you can access their open source repositories and view their configuration for linting with Vale. You can add more style guides to my configuration in the vale.ini file. Here's the list of available repositories with [officially supported style guides](https://github.com/errata-ai/styles#available-styles). I took the Microsoft and Google style guides from there. Follow the link and download the folder with rules. For example, [this folder for Joblint style guide](https://github.com/errata-ai/Joblint/tree/master/Joblint). This style guide has the rules for Vale to check the text in the job descriptions: if they have sexism, cultural blunders, recruiter fails, etc.
 
-Another interesting feature is to experiment with creating the rules in [Vale Studio](https://vale-studio.errata.ai/). You can add your own rules and regular expressions to view the immediate result of how this rule works.
+Another interesting feature is to experiment with creating the rules in [Vale Studio](https://studio.vale.sh/). You can add your own rules and regular expressions to view the immediate result of how this rule works.
 
 Hope this article helps you automate your document tests and check if they're in line with the recommendations of style guides. Create your own style guides and rules for linting with Vale. Remember that humans are prone to mistakes while such linters as Vale help avoid the human factor.
