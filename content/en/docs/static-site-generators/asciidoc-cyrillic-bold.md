@@ -21,7 +21,7 @@ You must have AsciiDoc and Antora installed on your machine.
 To add the bold text for Cyrillic characters or words, use the following syntax:
 
 ```asciidoc
-+++<b style="font-weight: 700">Текст українською мовою жирним шрифтом<b>+++
++++<b style="font-weight: 700">Текст українською мовою жирним шрифтом</b>+++
 ```
 
 The resulting HTML output has the bold text written in the Cyrillic characters.
