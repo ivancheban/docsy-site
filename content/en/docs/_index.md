@@ -10,29 +10,25 @@ menu:
 The Russians have started their bloody war in Ukraine, deliberately killing thousands of Ukrainian civilians.
 
 <style>
-.container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+.responsive-iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
 }
 
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.responsive-iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 </style>
 
-<div class="container">
-  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/cccGKGmG1h0?si=hBaAO4HyqDg356lj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div class="responsive-iframe-container">
+<iframe src="https://www.youtube.com/embed/LRWW6OHKWkY?si=qZ9eogOkrX2Bs4ea" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
-
 
 {{% /pageinfo %}}
 
