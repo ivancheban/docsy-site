@@ -102,10 +102,89 @@ Now that you've built your site locally, you can start editing its content in Ma
 
 To deploy your site on GitHub Pages:
 
+1. In VS Code, go to Explorer tab and select the `docusaurus.config.js` file that stores configuration of your Docusaurus site. In my case, the path is `C:\Users\ivanc\test-docusaurus-docs\docusaurus.config.js`.
+
+1. Change the values for the following parameters:
+
+    * `organizationName` - In my case, it's `ivancheban`, my GitHub account.
+    * `projectName` - In my case, it's `test-docusaurus-docs`, your Docusaurus project name you selected and published to GitHub.
+    * `url` - In my case, it's `https://ivancheban.github.io`.
+    * `baseUrl` - In my case, it's `/test-docusaurus-docs/`.
+
+        ![Docusaurus.config.js values](../img/docusaurus-config-js.png)
+
+1. In the root folder of your Docusaurus project, create the `deploy.yml` file with this path: `.github/workflows/deploy.yml`. It means that first you create the `.github` folder, then `workflows` folder inside it, and only then the `deploy.yml` file. Paste the following code inside the `deploy.yml` file.
+
+    ```yml
+    name: Deploy to GitHub Pages
+
+    on:
+    push:
+        branches:
+        - main
+        # Review gh actions docs if you want to further define triggers, paths, etc
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+    jobs:
+    build:
+        name: Build Docusaurus
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+            with:
+            fetch-depth: 0
+        - uses: actions/setup-node@v4
+            with:
+            node-version: 18
+            cache: npm
+
+        - name: Install dependencies
+            run: npm ci
+        - name: Build website
+            run: npm run build
+
+        - name: Upload Build Artifact
+            uses: actions/upload-pages-artifact@v3
+            with:
+            path: build
+
+    deploy:
+        name: Deploy to GitHub Pages
+        needs: build
+
+        # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+        permissions:
+        pages: write # to deploy to Pages
+        id-token: write # to verify the deployment originates from an appropriate source
+
+        # Deploy to the github-pages environment
+        environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+
+        runs-on: ubuntu-latest
+        steps:
+        - name: Deploy to GitHub Pages
+            id: deployment
+            uses: actions/deploy-pages@v4
+    ```
+
+1. Commit and push your changes:
+
+    * `Ctrl + Shift + P`.
+    * Select `Git: Commit All`.
+    * Add the commit message.
+    * `Ctrl + Shift + P`.
+    * Select `Git: Push`.
+
+1. Create a `gh-pages` branch in your Docusaurus project. Although you commit and push to the `main` branch, the `gh-pages` branch will be used for deployment of your site on GitHub Pages.
+
 1. Go to **Settings** in GitHub page of your project.
 
     ![Settings in GitHub](../img/settings-github.png)
 
-1. Select **Pages**.
+1. Select **Pages** and select the `gh-pages` branch. Save the changes.
 
-1.
+    ![GitHub Pages](../img/gh-pages.png)
+
+1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
