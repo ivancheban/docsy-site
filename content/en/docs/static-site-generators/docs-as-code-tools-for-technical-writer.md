@@ -188,3 +188,27 @@ To deploy your site on GitHub Pages:
     ![GitHub Pages](../img/gh-pages.png)
 
 1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
+
+## MkDocs Material
+
+{{% pageinfo %}}
+The goal is to build and deploy a test MkDocs Material site. You can then reproduce the steps to build your own docs site and deploy it to public GitHub Pages.
+{{% /pageinfo %}}
+
+### Prerequisites
+
+You need to have Python with pip for MkDocs. Then you can install MkDocs and the MkDocs Material packages using pip.
+
+1. **Ensure Python is installed**: You can check if Python is installed on your system by opening a command prompt and typing `python --version`. If Python is installed, you will see something like `Python 3.11.3`. If you don't have Python installed, install it from their [official website](https://www.python.org/downloads/windows/).
+
+1. **Ensure pip is installed**: You can check if pip is installed by typing `pip --version` in the command prompt. If pip is installed, it will display the version.
+
+1. **Install MkDocs**: Type `pip install mkdocs` in the command prompt. Make sure MkDocs is installed by typing `mkdocs --version`.
+
+1. **Install MkDocs Material**: Type `pip install mkdocs-material` in the command prompt. To check if MkDocs Material is installed, type `mkdocs serve --help`.  This command should list material as an option under the `--theme`. If material is listed, it means that Material for MkDocs is installed correctly.
+
+    <img src="../img/material-theme.png" alt="Material theme" width="500"/>
+
+For more information, see [MkDocs Installation](https://www.mkdocs.org/user-guide/installation/) and MkDocs [Material Installation](https://squidfunk.github.io/mkdocs-material/getting-started/#with-pip).
+
+
