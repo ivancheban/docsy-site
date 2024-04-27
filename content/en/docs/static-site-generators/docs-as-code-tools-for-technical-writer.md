@@ -18,9 +18,9 @@ Ok, so your manager or your test task requires you to come up with the best docu
 
 ## Docusaurus and MkDocs Material
 
-Have you heard about [Docusaurus](https://docusaurus.io/) and [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)? These are static site generators (SSGs) that build a static documentation site. These SSGs use the [docs-as-code](../docs-as-code) approach, Markdown, and git. They're designed specifically for technical writers or developers who want to stand up a nice-looking docs site effortlessly and quickly. I wrote a [comprehensive guide](../docs-as-code/#docusaurus-static-site-generator) how to start working with Docusaurus a couple of years ago. As this tool is developed, some things could have changed. That's why I'm going to go step by step again to deploy a Docusaurus documentation site. While Docusaurus remains my number one go-to documentation site generator, there's one thing which I still need to try with it: docs versioning.
+Have you heard about [Docusaurus](https://docusaurus.io/) and [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)? These are static site generators (SSGs) that build a static documentation site. These SSGs use the [docs-as-code](../docs-as-code) approach, Markdown, and git. They're designed specifically for technical writers or developers who want to stand up a nice-looking docs site effortlessly and quickly. I wrote a [comprehensive guide](../docs-as-cod/#docusaurus-static-site-generator) how to start working with Docusaurus a couple of years ago. As this tool is developed, some things could have changed. That's why I'm going to go step by step again to deploy a Docusaurus documentation site.
 
-[MkDocs Material](https://squidfunk.github.io/mkdocs-material/) has long been on my list of the best SSGs for documentation sites. Material theme of MkDocs is designed for documentation writers. It has many features, you'd better consult their documentation. I was able to build a [test site](https://ivancheban.github.io/my-project/0.3/) with docs versioning. It's not that straightforward though. Anyway, I'll try to reproduce the steps and build another one with step by step instructions.
+[MkDocs Material](https://squidfunk.github.io/mkdocs-material/) has long been on my list of the best SSGs for documentation sites. Material theme of MkDocs is designed for documentation writers. It has many features, you'd better consult their documentation.
 
 ## Docusaurus
 
@@ -271,30 +271,52 @@ You can continue creating a brand new MkDocs Material site using [these instruct
     copyright: Copyright &copy; 2023 Ivan Cheban
     ```
 
-1. Open the project folder in the VS Code terminal or in the command prompt and install the missing plugins:
-
-    ```sh
-    pip install mike
-    ```
-
-    {{< alert title="Note" >}}The `mike` plugin provides versioning for your docs. If you don't need the versioned docs, delete the `version: provider: mike` words and `- mike` from plugins in the `mkdocs.yml` file.{{< /alert >}}
-    
-
 1. To run the site on your local host, type: `mkdocs serve`. This starts the site in your browser with this address: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
 
     ![MkDocs local site](../img/mkdocs-local-site.png)
 
-    {{< alert title="Note" >}}You don't see the docs versioning provided by the `mike` plugin because you need to deploy your site using `mike serve`. {{< /alert >}}
-
-#### Docs versioning on local host
-
-To deploy a new version of your docs on a local host:
-
-1. Run: `mike deploy --push --update-aliases 0.1 latest` where `0.1` is the version you make the latest. Then run `mike deploy --push --update-aliases 0.2 latest` to make `0.2` the latest version.
-
-1. Run `mike serve` to open your site in the local host with this address: [http://localhost:8000/0.2/](http://localhost:8000/0.2/). When you go to the older version from the version selector, you'll see this message:
-
-![Latest version message](../img/latest-version.png)
-
 ### Deploy MkDocs Material to GitHub Pages
 
+Now that you've checked that your MkDocs Material site works locally, it's time to deploy it on GitHub as a public site.
+
+1. Use the [steps 1–8 from deploying a Docusaurus site to GitHub](#deploy-docusaurus-to-github-pages) for committing and pushing your MkDocs project to a GitHub repository.
+
+1. Create a `gh-pages` branch in your repository.
+
+1. In the web interface of your repository, Go to **Settings > Pages** and selected `gh-pages` as a branch to deploy your site from. Save the changes.
+
+1. At the root of your MkDocs project, create a new GitHub Actions workflow file: `.github/workflows/ci.yml`, and copy and paste the following contents:
+
+    ```yml
+    name: ci 
+    on:
+    push:
+        branches:
+        - master 
+        - main
+    permissions:
+    contents: write
+    jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - name: Configure Git Credentials
+            run: |
+            git config user.name github-actions[bot]
+            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        - uses: actions/setup-python@v5
+            with:
+            python-version: 3.x
+        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+        - uses: actions/cache@v4
+            with:
+            key: mkdocs-material-${{ env.cache_id }}
+            path: .cache
+            restore-keys: |
+                mkdocs-material-
+        - run: pip install mkdocs-material 
+        - run: mkdocs gh-deploy --force
+    ```
+
+1. Commit and push your changes.
