@@ -246,7 +246,6 @@ You can continue creating a brand new MkDocs Material site using [these instruct
 
     plugins:
     - search
-    - mike
 
     extra:
     version:
