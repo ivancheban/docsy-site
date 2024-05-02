@@ -190,6 +190,10 @@ Continue to deploy your site to GitHub Pages:
 
     ![GitHub Pages](../img/gh-pages.png)
 
+1. Go to **Settings > Environments** and remove the `gh-pages` from the limitation.
+
+    ![GitHub Pages](../img/gh-pages-remove-limitation.png)
+
 1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
 
 ## MkDocs Material
