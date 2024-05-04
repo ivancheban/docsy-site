@@ -115,59 +115,62 @@ To deploy your site on GitHub Pages:
 
 1. In the root folder of your Docusaurus project, create the `deploy.yml` file with this path: `.github/workflows/deploy.yml`. It means that first you create the `.github` folder, then `workflows` folder inside it, and only then the `deploy.yml` file. Paste the following code inside the `deploy.yml` file.
 
-    ```yml
+
+```yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  build:
+    name: Build Docusaurus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
     name: Deploy to GitHub Pages
+    needs: build
 
-    on:
-    push:
-        branches:
-        - main
-        # Review gh actions docs if you want to further define triggers, paths, etc
-        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
-    jobs:
-    build:
-        name: Build Docusaurus
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-            with:
-            fetch-depth: 0
-        - uses: actions/setup-node@v4
-            with:
-            node-version: 18
-            cache: npm
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-        - name: Install dependencies
-            run: npm ci
-        - name: Build website
-            run: npm run build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
 
-        - name: Upload Build Artifact
-            uses: actions/upload-pages-artifact@v3
-            with:
-            path: build
-
-    deploy:
-        name: Deploy to GitHub Pages
-        needs: build
-
-        # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-        permissions:
-        pages: write # to deploy to Pages
-        id-token: write # to verify the deployment originates from an appropriate source
-
-        # Deploy to the github-pages environment
-        environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
-
-        runs-on: ubuntu-latest
-        steps:
-        - name: Deploy to GitHub Pages
-            id: deployment
-            uses: actions/deploy-pages@v4
-    ```
+Continue to deploy your site to GitHub Pages:
 
 1. Commit and push your changes:
 
@@ -186,6 +189,10 @@ To deploy your site on GitHub Pages:
 1. Select **Pages** and select the `gh-pages` branch. Save the changes.
 
     ![GitHub Pages](../img/gh-pages.png)
+
+1. Go to **Settings > Environments** and remove the `gh-pages` from the limitation.
+
+    ![GitHub Pages](../img/gh-pages-remove-limitation.png)
 
 1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
 
