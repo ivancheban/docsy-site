@@ -115,7 +115,6 @@ To deploy your site on GitHub Pages:
 
 1. In the root folder of your Docusaurus project, create the `deploy.yml` file with this path: `.github/workflows/deploy.yml`. It means that first you create the `.github` folder, then `workflows` folder inside it, and only then the `deploy.yml` file. Paste the following code inside the `deploy.yml` file.
 
-
 ```yml
 name: Deploy to GitHub Pages
 
@@ -216,7 +215,7 @@ You need to have Python with pip for MkDocs. Then you can install MkDocs and the
 
     <img src="../img/material-theme.png" alt="Material theme" width="500"/>
 
-For more information, see [MkDocs Installation](https://www.mkdocs.org/user-guide/installation/) and MkDocs [Material Installation](https://squidfunk.github.io/mkdocs-material/getting-started/#with-pip).
+For more information, see [MkDocs Installation](https://www.mkdocs.org/user-guide/installation/) and [MkDocs Material Installation](https://squidfunk.github.io/mkdocs-material/getting-started/#with-pip).
 
 ### Install the MkDocs site
 
@@ -226,56 +225,57 @@ You can continue creating a brand new MkDocs Material site using [these instruct
 
 1. Open the `mkdocs.yml` file to edit the configuration of your site.
 
-    ```yml
-    site_name: Docs site
-    site_url: https://ivancheban.github.io/my-project/
-    nav:
-        - Introduction: 'index.md'
-        - User Guide:
-            - 'Test': 'test-folder/test.md'
-            - 'Test 1': 'test-folder/test1.md'
-            - 'Test 2': 'test-folder/test2.md'
-        - About:
-            - 'About this site': 'about.md'
-    theme:
-    features:
-        - navigation.footer
-    name: material
-    custom_dir: overrides
-    logo: img/logo.svg
-    favicon: img/favicon.ico
-    palette: 
-        scheme: default
-        accent: light blue
-    
-    extra_css:
-    - stylesheets/extra.css
+```yml
+site_name: Docs site
+site_url: https://ivancheban.github.io/my-project/
+nav:
+    - Introduction: 'index.md'
+    - User Guide:
+        - 'Test': 'test-folder/test.md'
+        - 'Test 1': 'test-folder/test1.md'
+        - 'Test 2': 'test-folder/test2.md'
+    - About:
+        - 'About this site': 'about.md'
+theme:
+  features:
+    - navigation.footer
+  name: material
+  custom_dir: overrides
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  palette: 
+    scheme: default
+    accent: light blue
+  
+extra_css:
+  - stylesheets/extra.css
 
-    plugins:
-    - search
+plugins:
+  - search
+  - mike
 
-    extra:
-    version:
-        provider: mike
-    social:
-        - icon: fontawesome/brands/github
-        link: https://github.com/ivancheban
-        - icon: fontawesome/brands/linkedin
-        link: https://linkedin.com/in/ivan-cheban-a24b576
-    generator: false
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ivancheban
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ivan-cheban-a24b576
+  generator: false
 
-    markdown_extensions:
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
-    - admonition
-    - pymdownx.details
-    - pymdownx.tabbed:
-        alternate_style: true
-    copyright: Copyright &copy; 2023 Ivan Cheban
-    ```
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+copyright: Copyright &copy; 2023 Ivan Cheban
+```
 
 1. To run the site on your local host, type: `mkdocs serve`. This starts the site in your browser with this address: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
 
@@ -293,36 +293,32 @@ Now that you've checked that your MkDocs Material site works locally, it's time 
 
 1. At the root of your MkDocs project, create a new GitHub Actions workflow file: `.github/workflows/ci.yml`, and copy and paste the following contents:
 
-    ```yml
-    name: ci 
-    on:
-    push:
-        branches:
-        - master 
-        - main
-    permissions:
-    contents: write
-    jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - name: Configure Git Credentials
-            run: |
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-        - uses: actions/setup-python@v5
-            with:
-            python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-        - uses: actions/cache@v4
-            with:
-            key: mkdocs-material-${{ env.cache_id }}
-            path: .cache
-            restore-keys: |
-                mkdocs-material-
-        - run: pip install mkdocs-material 
-        - run: mkdocs gh-deploy --force
-    ```
+```yml
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+```
 
-1. Commit and push your changes.
+Commit and push your changes.

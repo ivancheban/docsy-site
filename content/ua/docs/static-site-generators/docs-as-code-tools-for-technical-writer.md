@@ -117,59 +117,87 @@ description: >
 
 1. У кореневій папці вашого проекту Docusaurus створіть файл `deploy.yml` за цим шляхом: `.github/workflows/deploy.yml`. Це означає, що спочатку ви створюєте папку `.github`, потім у ній папку `workflows`, і лише потім файл `deploy.yml`. Вставте наступний код усередину файлу `deploy.yml`.
 
-    ```yml
+```yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+
+jobs:
+  build:
+    name: Build Docusaurus
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Build website
+        run: npm run build
+
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
     name: Deploy to GitHub Pages
+    needs: build
 
-    on:
-    push:
-        branches:
-        - main
-        # Review gh actions docs if you want to further define triggers, paths, etc
-        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
 
-    jobs:
-    build:
-        name: Build Docusaurus
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-            with:
-            fetch-depth: 0
-        - uses: actions/setup-node@v4
-            with:
-            node-version: 18
-            cache: npm
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
-        - name: Install dependencies
-            run: npm ci
-        - name: Build website
-            run: npm run build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
 
-        - name: Upload Build Artifact
-            uses: actions/upload-pages-artifact@v3
-            with:
-            path: build
+Продовжуйте публікацію вашого сайту на GitHub Pages:
 
-    deploy:
-        name: Deploy to GitHub Pages
-        needs: build
+1. Зробіть коміт і надішліть свої зміни:
 
-        # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-        permissions:
-        pages: write # to deploy to Pages
-        id-token: write # to verify the deployment originates from an appropriate source
+    * `Ctrl + Shift + P`.
+    * Виберіть `Git: Commit All`.
+    * Додайте повідомлення про коміт.
+    * `Ctrl + Shift + P`.
+    * Виберіть `Git: Push`.
 
-        # Deploy to the github-pages environment
-        environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
+1. Створіть гілку `gh-pages` у вашому проекті Docusaurus. Хоча ви робите коміт і надсилаєте зміни в гілку `main`, гілка `gh-pages` буде використовуватися для публікації вашого сайту на GitHub Pages.
 
-        runs-on: ubuntu-latest
-        steps:
-        - name: Deploy to GitHub Pages
-            id: deployment
-            uses: actions/deploy-pages@v4
-    ```
+1. Перейдіть до **Settings** на сторінці вашого проєкту на GitHub.
+
+    ![Settings in GitHub](../img/settings-github.png)
+
+1. Виберіть **Pages** та виберіть гілку `gh-pages`. Збережіть зміни.
+
+    ![GitHub Pages](../img/gh-pages.png)
+
+1. Перейдіть до **Settings > Environments** та видаліть `gh-pages` з обмеження.
+
+    ![GitHub Pages](../img/gh-pages-remove-limitation.png)
+
+1. Змініть щось у своїх локальних файлах, зробіть коміт і надішліть зміни. Коміт до основної гілки починає публікацію сайту. Зачекайте, поки пайплайн завершить генерацію та публікацію вашого сайту. Перевірте згенерований і опублікований сайт. У моєму випадку це: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
+
+Continue to deploy your site to GitHub Pages:
 
 1. Commit and push your changes:
 
@@ -189,135 +217,136 @@ description: >
 
     ![GitHub Pages](../img/gh-pages.png)
 
+1. Go to **Settings > Environments** and remove the `gh-pages` from the limitation.
+
+    ![GitHub Pages](../img/gh-pages-remove-limitation.png)
+
 1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
 
 ## MkDocs Material
 
 {{% pageinfo %}}
-The goal is to build and deploy a test MkDocs Material site. You can then reproduce the steps to build your own docs site and deploy it to public GitHub Pages.
+Мета — згенерувати та опублікувати тестовий сайт MkDocs Material. Потім ви зможете повторити ці кроки, щоб зробити свій власний сайт із документацією та опублікувати його в інтернеті за допомогою сервісу GitHub Pages.
 {{% /pageinfo %}}
 
-### Prerequisites
+### Попередні вимоги
 
-You need to have Python with pip for MkDocs. Then you can install MkDocs and the MkDocs Material packages using pip.
+Вам потрібно мати Python з pip для MkDocs. Потім ви можете встановити пакети MkDocs та MkDocs Material за допомогою pip.
 
-1. **Ensure Python is installed**: You can check if Python is installed on your system by opening a command prompt and typing `python --version`. If Python is installed, you will see something like `Python 3.11.3`. If you don't have Python installed, install it from their [official website](https://www.python.org/downloads/windows/).
+1. **Переконайтеся, що Python встановлено**: Ви можете перевірити, чи встановлено Python у вашій системі, відкривши командний рядок та ввівши `python --version`. Якщо Python встановлено, ви побачите щось на зразок `Python 3.11.3`. Якщо у вас не встановлено Python, установіть його з їхнього [офіційного веб-сайту](https://www.python.org/downloads/windows/).
 
-1. **Ensure pip is installed**: You can check if pip is installed by typing `pip --version` in the command prompt. If pip is installed, it will display the version.
+1. **Переконайтеся, що pip встановлено**: Ви можете перевірити, чи встановлено pip, ввівши `pip --version` в командному рядку. Якщо pip встановлено, він відобразить версію.
 
-1. **Install MkDocs**: Type `pip install mkdocs` in the command prompt. Make sure MkDocs is installed by typing `mkdocs --version`.
+1. **Установіть MkDocs**: Уведіть `pip install mkdocs` в командному рядку. Переконайтеся, що MkDocs встановлено, ввівши `mkdocs --version`.
 
-1. **Install MkDocs Material**: Type `pip install mkdocs-material` in the command prompt. To check if MkDocs Material is installed, type `mkdocs serve --help`.  This command should list material as an option under the `--theme`. If material is listed, it means that Material for MkDocs is installed correctly.
+1. **Установіть MkDocs Material**: Уведіть `pip install mkdocs-material` в командному рядку. Щоб перевірити, чи встановлено MkDocs Material, уведіть `mkdocs serve --help`. Ця команда повинна вказати material як опцію в розділі `--theme`. Якщо material є в переліку, це означає, що MkDocs Material встановлено правильно.
 
     <img src="../img/material-theme.png" alt="Material theme" width="500"/>
 
-For more information, see [MkDocs Installation](https://www.mkdocs.org/user-guide/installation/) and MkDocs [Material Installation](https://squidfunk.github.io/mkdocs-material/getting-started/#with-pip).
+Для отримання додаткової інформації дивіться [Встановлення MkDocs](https://www.mkdocs.org/user-guide/installation/) та [Встановлення MkDocs Material](https://squidfunk.github.io/mkdocs-material/getting-started/#with-pip).
 
-### Install the MkDocs site
+### Встановлення сайту MkDocs
 
-You can continue creating a brand new MkDocs Material site using [these instructions](https://squidfunk.github.io/mkdocs-material/creating-your-site/). Or, you can fork my repo with the ready configuration:
+Ви можете продовжити створення абсолютно нового сайту MkDocs Material, використовуючи [ці інструкції](https://squidfunk.github.io/mkdocs-material/creating-your-site/). Або ви можете скопіювати мій репозиторій з готовою конфігурацією:
 
-1. Fork or download the zipped project from here: [https://github.com/ivancheban/my-project](https://github.com/ivancheban/my-project).
+1. Скопіюйте (fork) або завантажте архівований проект звідси: [https://github.com/ivancheban/my-project](https://github.com/ivancheban/my-project).
 
-1. Open the `mkdocs.yml` file to edit the configuration of your site.
+1. Відкрийте файл `mkdocs.yml`, щоб відредагувати конфігурацію вашого сайту.
 
-    ```yml
-    site_name: Docs site
-    site_url: https://ivancheban.github.io/my-project/
-    nav:
-        - Introduction: 'index.md'
-        - User Guide:
-            - 'Test': 'test-folder/test.md'
-            - 'Test 1': 'test-folder/test1.md'
-            - 'Test 2': 'test-folder/test2.md'
-        - About:
-            - 'About this site': 'about.md'
-    theme:
-    features:
-        - navigation.footer
-    name: material
-    custom_dir: overrides
-    logo: img/logo.svg
-    favicon: img/favicon.ico
-    palette: 
-        scheme: default
-        accent: light blue
-    
-    extra_css:
-    - stylesheets/extra.css
+```yml
+site_name: Docs site
+site_url: https://ivancheban.github.io/my-project/
+nav:
+    - Introduction: 'index.md'
+    - User Guide:
+        - 'Test': 'test-folder/test.md'
+        - 'Test 1': 'test-folder/test1.md'
+        - 'Test 2': 'test-folder/test2.md'
+    - About:
+        - 'About this site': 'about.md'
+theme:
+  features:
+    - navigation.footer
+  name: material
+  custom_dir: overrides
+  logo: img/logo.svg
+  favicon: img/favicon.ico
+  palette: 
+    scheme: default
+    accent: light blue
+  
+extra_css:
+  - stylesheets/extra.css
 
-    plugins:
-    - search
+plugins:
+  - search
+  - mike
 
-    extra:
-    version:
-        provider: mike
-    social:
-        - icon: fontawesome/brands/github
-        link: https://github.com/ivancheban
-        - icon: fontawesome/brands/linkedin
-        link: https://linkedin.com/in/ivan-cheban-a24b576
-    generator: false
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ivancheban
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/ivan-cheban-a24b576
+  generator: false
 
-    markdown_extensions:
-    - pymdownx.superfences:
-        custom_fences:
-            - name: mermaid
-            class: mermaid
-            format: !!python/name:pymdownx.superfences.fence_code_format
-    - admonition
-    - pymdownx.details
-    - pymdownx.tabbed:
-        alternate_style: true
-    copyright: Copyright &copy; 2023 Ivan Cheban
-    ```
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - admonition
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+copyright: Copyright &copy; 2023 Ivan Cheban
+```
 
-1. To run the site on your local host, type: `mkdocs serve`. This starts the site in your browser with this address: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
+Щоб запустити сайт на вашому локальному хості, введіть: `mkdocs serve`. Це запускає сайт у вашому браузері за цією адресою: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
 
     ![MkDocs local site](../img/mkdocs-local-site.png)
 
-### Deploy MkDocs Material to GitHub Pages
+## Розгортання MkDocs Material на GitHub Pages
 
-Now that you've checked that your MkDocs Material site works locally, it's time to deploy it on GitHub as a public site.
+Тепер, коли ви перевірили, що ваш сайт MkDocs Material працює локально, настав час розмістити його на GitHub як публічний сайт.
 
-1. Use the [steps 1–8 from deploying a Docusaurus site to GitHub](#deploy-docusaurus-to-github-pages) for committing and pushing your MkDocs project to a GitHub repository.
+1. Використовуйте [кроки 1–8 із публікаціх сайту Docusaurus на GitHub Pages](#публікація-сайту-docusaurus-на-github-pages) для фіксації змін і надсилання вашого проєкту MkDocs до репозиторію GitHub.
 
-1. Create a `gh-pages` branch in your repository.
+2. Створіть гілку `gh-pages` у репозиторії.
 
-1. In the web interface of your repository, Go to **Settings > Pages** and selected `gh-pages` as a branch to deploy your site from. Save the changes.
+3. У веб-інтерфейсі репозиторію перейдіть до **Settings > Pages** і оберіть `gh-pages` як гілку для публікації вашого сайту. Збережіть зміни.
 
-1. At the root of your MkDocs project, create a new GitHub Actions workflow file: `.github/workflows/ci.yml`, and copy and paste the following contents:
+4. У кореневому каталозі вашого проєкту MkDocs створіть новий файл робочого процесу GitHub Actions: `.github/workflows/ci.yml` та скопіюйте і вставте в нього наступний код:
 
-    ```yml
-    name: ci 
-    on:
-    push:
-        branches:
-        - master 
-        - main
-    permissions:
-    contents: write
-    jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - name: Configure Git Credentials
-            run: |
-            git config user.name github-actions[bot]
-            git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-        - uses: actions/setup-python@v5
-            with:
-            python-version: 3.x
-        - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
-        - uses: actions/cache@v4
-            with:
-            key: mkdocs-material-${{ env.cache_id }}
-            path: .cache
-            restore-keys: |
-                mkdocs-material-
-        - run: pip install mkdocs-material 
-        - run: mkdocs gh-deploy --force
-    ```
+```yml
+name: ci 
+on:
+  push:
+    branches:
+      - master 
+      - main
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material 
+      - run: mkdocs gh-deploy --force
+```
 
-1. Commit and push your changes.
+Зробіть коміт і передайте ваші зміни: commit and push.
