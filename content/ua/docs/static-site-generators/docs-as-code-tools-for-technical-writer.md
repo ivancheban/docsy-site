@@ -1,6 +1,6 @@
 ---
-title: "Tools for your docs: Docusaurus and MkDocs Material"
-linkTitle: "Tools for your docs: Docusaurus and MkDocs Material"
+title: "Інструменти для документації: Docusaurus та MkDocs Material"
+linkTitle: "Інструменти для документації: Docusaurus та MkDocs Material"
 weight: 12
 description: >
   У цій статті я пояснюю, який інструмент можна вибрати для створення сайту з документацією. Конкретно, я обговорюю два інструменти, які я рекомендую для технічних письменників: Docusaurus і MkDocs Material.
@@ -196,32 +196,6 @@ jobs:
     ![GitHub Pages](../img/gh-pages-remove-limitation.png)
 
 1. Змініть щось у своїх локальних файлах, зробіть коміт і надішліть зміни. Коміт до основної гілки починає публікацію сайту. Зачекайте, поки пайплайн завершить генерацію та публікацію вашого сайту. Перевірте згенерований і опублікований сайт. У моєму випадку це: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
-
-Continue to deploy your site to GitHub Pages:
-
-1. Commit and push your changes:
-
-    * `Ctrl + Shift + P`.
-    * Select `Git: Commit All`.
-    * Add the commit message.
-    * `Ctrl + Shift + P`.
-    * Select `Git: Push`.
-
-1. Create a `gh-pages` branch in your Docusaurus project. Although you commit and push to the `main` branch, the `gh-pages` branch will be used for deployment of your site on GitHub Pages.
-
-1. Go to **Settings** in GitHub page of your project.
-
-    ![Settings in GitHub](../img/settings-github.png)
-
-1. Select **Pages** and select the `gh-pages` branch. Save the changes.
-
-    ![GitHub Pages](../img/gh-pages.png)
-
-1. Go to **Settings > Environments** and remove the `gh-pages` from the limitation.
-
-    ![GitHub Pages](../img/gh-pages-remove-limitation.png)
-
-1. Change anything in your local files, commit and push changes. The commit to the main branch starts the site deployment. Wait while the pipeline finishes building and deploying your site. Check the built site. In my case, it's: [https://ivancheban.github.io/test-docusaurus-docs/](https://ivancheban.github.io/test-docusaurus-docs/).
 
 ## MkDocs Material
 
