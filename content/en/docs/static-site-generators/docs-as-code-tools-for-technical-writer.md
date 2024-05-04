@@ -277,9 +277,9 @@ markdown_extensions:
 copyright: Copyright &copy; 2023 Ivan Cheban
 ```
 
-1. To run the site on your local host, type: `mkdocs serve`. This starts the site in your browser with this address: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
+To run the site on your local host, type: `mkdocs serve`. This starts the site in your browser with this address: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
 
-    ![MkDocs local site](../img/mkdocs-local-site.png)
+![MkDocs local site](../img/mkdocs-local-site.png)
 
 ### Deploy MkDocs Material to GitHub Pages
 

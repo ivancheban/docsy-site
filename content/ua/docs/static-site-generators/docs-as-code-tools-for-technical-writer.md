@@ -307,7 +307,7 @@ copyright: Copyright &copy; 2023 Ivan Cheban
 
 Щоб запустити сайт на вашому локальному хості, введіть: `mkdocs serve`. Це запускає сайт у вашому браузері за цією адресою: [http://127.0.0.1:8000/my-project/](http://127.0.0.1:8000/my-project/).
 
-    ![MkDocs local site](../img/mkdocs-local-site.png)
+![MkDocs local site](../img/mkdocs-local-site.png)
 
 ## Розгортання MkDocs Material на GitHub Pages
 
