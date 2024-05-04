@@ -36,7 +36,7 @@ You need to have the following items installed on your computer.
 
 You can check if it's already installed by typing `node -v` in the terminal or Command Prompt. You need v.18 or later.
 
-![Command Prompt with Node.js version](../img/command-prompt-node.png)
+<img src="../img/command-prompt-node.png" alt="Command Prompt with Node.js version" width="500"/>
 
 If you have an older version, remove it using Windows **Add or remove programs**. Then install the newest version from [here](https://nodejs.org/en/download/current).
 
@@ -48,25 +48,25 @@ Use Node.js command to install Docusaurus on your computer:
 
 1. Type `y` when prompted and press Enter.
 
-    ![NPM Init Docusaurus](../img/npm-init-docusaurus.png)
+    <img src="../img/npm-init-docusaurus.png" alt="NPM Init Docusaurus" width="500"/>
 
 1. Type the name of your site (project) when prompted and press Enter.
 
-    ![Project name](../img/project-name.png)
+    <img src="../img/project-name.png" alt="Project name" width="500"/>
 
 1. Select the recommended `classic` template by pressing Enter.
 
-    ![Classic template](../img/classic-template.png)
+    <img src="../img/classic-template.png" alt="Classic template" width="500"/>
 
 1. Select JavaScript by pressing Enter.
 
-    ![JavaScript](../img/javascript.png)
+    <img src="../img/javascript.png" alt="JavaScript" width="500"/>
 
 1. Type `cd test-docusaurus-docs` to go to the folder with installed Docusaurus.
 
 1. Type `npm start` to start a hot reload server for opening the docs site in your browser on local host.
 
-    ![NPM start](../img/npm-start.png)
+    <img src="../img/npm-start.png" alt="NPM start" width="500"/>
 
 Your site opens in the browser with this address: [http://localhost:3000/](http://localhost:3000/)
 

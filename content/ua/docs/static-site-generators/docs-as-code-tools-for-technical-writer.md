@@ -36,7 +36,7 @@ description: >
 
 Ви можете перевірити, чи вже встановлено Node.js, набравши `node -v` в терміналі або командному рядку. Потрібна версія 18 або новіша.
 
-![Command Prompt with Node.js version](../img/command-prompt-node.png)
+<img src="../img/command-prompt-node.png" alt="Command Prompt with Node.js version" width="500"/>
 
 Якщо у вас старіша версія, видаліть її за допомогою **Додати або видалити програми** в Windows. Потім встановіть найновішу версію з [цього сайту](https://nodejs.org/en/download/current).
 
@@ -48,25 +48,25 @@ description: >
 
 1. Уведіть `y` після підказки та натисніть Enter.
 
-    ![NPM Init Docusaurus](../img/npm-init-docusaurus.png)
+    <img src="../img/npm-init-docusaurus.png" alt="NPM Init Docusaurus" width="500"/>
 
 1. Уведіть назву вашого сайту (проєкту), коли вас про це попросять, і натисніть Enter.
 
-    ![Project name](../img/project-name.png)
+    <img src="../img/project-name.png" alt="Project name" width="500"/>
 
 1. Виберіть рекомендований шаблон `classic`, натиснувши Enter.
 
-    ![Classic template](../img/classic-template.png)
+    <img src="../img/classic-template.png" alt="Classic template" width="500"/>
 
 1. Виберіть JavaScript за допомогою стрілок на клавіатурі та натисніть Enter.
 
-    ![JavaScript](../img/javascript.png)
+    <img src="../img/javascript.png" alt="JavaScript" width="500"/>
 
 1. Уведіть `cd test-docusaurus-docs`, щоб перейти до папки зі встановленим Docusaurus.
 
 1. Уведіть `npm start`, щоб запустити сервер із миттєвим перезавантаженням для відкриття сайту з документацією у вашому браузері на локальному хості.
 
-    ![NPM start](../img/npm-start.png)
+    <img src="../img/npm-start.png" alt="NPM start" width="500"/>
 
 Ваш сайт відкривається в браузері за цією адресою: [http://localhost:3000/](http://localhost:3000/)
 
