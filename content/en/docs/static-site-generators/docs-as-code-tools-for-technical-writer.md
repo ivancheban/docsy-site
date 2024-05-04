@@ -18,7 +18,7 @@ Ok, so your manager or your test task requires you to come up with the best docu
 
 ## Docusaurus and MkDocs Material
 
-Have you heard about [Docusaurus](https://docusaurus.io/) and [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)? These are static site generators (SSGs) that build a static documentation site. These SSGs use the [docs-as-code](../docs-as-code) approach, Markdown, and git. They're designed specifically for technical writers or developers who want to stand up a nice-looking docs site effortlessly and quickly. I wrote a [comprehensive guide](../docs-as-cod/#docusaurus-static-site-generator) how to start working with Docusaurus a couple of years ago. As this tool is developed, some things could have changed. That's why I'm going to go step by step again to deploy a Docusaurus documentation site.
+Have you heard about [Docusaurus](https://docusaurus.io/) and [MkDocs Material](https://squidfunk.github.io/mkdocs-material/)? These are static site generators (SSGs) that build a static documentation site. These SSGs use the [docs-as-code](../docs-as-code) approach, Markdown, and git. They're designed specifically for technical writers or developers who want to stand up a nice-looking docs site effortlessly and quickly. I wrote a [comprehensive guide](../docs-as-code/#docusaurus-static-site-generator) how to start working with Docusaurus a couple of years ago. As this tool is developed, some things could have changed. That's why I'm going to go step by step again to deploy a Docusaurus documentation site.
 
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) has long been on my list of the best SSGs for documentation sites. Material theme of MkDocs is designed for documentation writers. It has many features, you'd better consult their documentation.
 
@@ -64,7 +64,7 @@ Use Node.js command to install Docusaurus on your computer:
 
 1. Type `cd test-docusaurus-docs` to go to the folder with installed Docusaurus.
 
-1. Type `npm start` to start a live server for opening the docs site in your browser on local host.
+1. Type `npm start` to start a hot reload server for opening the docs site in your browser on local host.
 
     ![NPM start](../img/npm-start.png)
 
