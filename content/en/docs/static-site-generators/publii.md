@@ -7,7 +7,7 @@ description: >
 ---
 
 {{% pageinfo %}}
-The goal is to create a personal blog using Publii desktop CMS-based static site generator.
+The goal is to create a personal blog using Publii desktop CMS-based static site generator. See the result here: https://technical-writing-blog.netlify.app/use-publii-cms-for-a-blog
 {{% /pageinfo %}}
 
 ## What's Publii?
