@@ -14,7 +14,7 @@ The goal is to create a personal blog using Publii desktop CMS-based static site
 
 [Publii](https://getpublii.com/docs/) is a desktop (!) CMS-based static site generator that uses Vue.js for its WYSIWYG user interface and Handlebars.js for its themes templates. I suspect there's much more to this tool, but its my first impression about this tool.
 
-How can a technical writer use this tool?
+## How can a technical writer use this tool?
 In addition to its primary blog functionality that I used to create this blog, Publii offers many themes in its [Marketplace](https://marketplace.getpublii.com/themes/). The Documentation section has four nice technical writer's themes for your docs. Unfortunately, all of them are not free. But the price is moderate: €35.00.
 
 <img src="../img/marketplace-lg.png" alt="Marketplace" width="800"/>
