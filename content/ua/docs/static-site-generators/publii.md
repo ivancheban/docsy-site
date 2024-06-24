@@ -1,6 +1,6 @@
 ---
-title: "Use Publii CMS for a blog"
-linkTitle: "Use Publii CMS for a blog"
+title: "Створення блогу за допомогою Publii CMS"
+linkTitle: "Створення блогу за допомогою Publii CMS"
 weight: 13
 description: >
   Я вирішив дати Publii другий шанс через кілька років після того, як вперше спробував створити свій блог.
