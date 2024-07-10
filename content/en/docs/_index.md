@@ -27,7 +27,7 @@ The Russians have started their bloody war in Ukraine, deliberately killing thou
 </style>
 
 <div class="responsive-iframe-container">
-<iframe src="https://www.youtube.com/embed/LRWW6OHKWkY?si=qZ9eogOkrX2Bs4ea" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/VFbl2vrXKA0?si=zvP6MNijp3J-gCS9" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 {{% /pageinfo %}}
