@@ -54,7 +54,7 @@ Now is where the fun begins: there are linters not only for code but also for te
 
 ## Vale
 
-[Vale](https://docs.errata.ai/vale/about) linter is a command line tool that checks if texts meet the requirements of style guides or your own rules. For those who don't like using command prompt, there's a commercial version called [Vale Server](https://errata.ai/vale-server/). However, in this article I'm discussing a [free version](https://github.com/errata-ai/vale) of Vale linter.
+[Vale](https://vale.sh/) linter is a command line tool that checks if your text meets the requirements of style guides or your own rules. For those who don't like using command prompt, there's a [VS Code extension](https://marketplace.visualstudio.com/items?itemName=ChrisChinchilla.vale-vscode) that acts as a standard spellchecker and shows if your text meets the requirements of style guides.
 
 How does it work?
 
