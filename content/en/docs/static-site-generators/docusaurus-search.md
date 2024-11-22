@@ -448,7 +448,7 @@ To deploy your Docusaurus site online using GitHub Pages:
 
 1. In your GitHub website, go to **Settings > Pages** and select a branch from which you want to deploy your Docusaurus site. Type: `gh-pages`. Click **Save**.
 
-1. Go to **Settings > Environments** in your web repository. Delete the environment called `gitlab-pages`.
+1. Go to **Settings > Environments** in your web repository. Delete the environment called `github-pages`.
 
     <img src="../img/environments.png" alt="Install Lunr.js" width="1200"/>
     <br></br>
