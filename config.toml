@@ -116,13 +116,13 @@ github_project_repo = "https://github.com/ivancheban/docsy-site"
 # github_subdir = ""
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-#gcs_engine_id = "4997baf7bf2724069"
+gcs_engine_id = "4997baf7bf2724069"
 
 # Enable Algolia DocSearch
 algolia_docsearch = false
 
 # Enable Lunr.js offline search
-offlineSearch = true
+offlineSearch = false
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = true
