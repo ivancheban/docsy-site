@@ -11,10 +11,26 @@ def get_content(directory, lang_code):
                     with open(os.path.join(root, file), 'r', encoding='utf-8') as f:
                         md_content = f.read()
                         html_content = markdown.markdown(md_content)
-                        # Include language code in the URL
-                        url = f'/{lang_code}/' + os.path.relpath(os.path.join(root, file), directory).replace('.md', '/').replace('\\', '/')
+                        
+                        # Generate URL based on language and handle _index.md files
+                        url = os.path.relpath(os.path.join(root, file), directory).replace('\\', '/')
+                        if file == '_index.md':
+                            url = os.path.dirname(url)
+                            title = os.path.basename(os.path.dirname(os.path.join(root, file)))
+                        else:
+                            url = url.replace('.md', '/')
+                            title = file.replace('.md', '')
+                        
+                        if lang_code == 'ua':
+                            url = f'/ua/{url}'
+                        else:
+                            url = f'/{url}'
+                        
+                        # Remove any double slashes and ensure a trailing slash
+                        url = url.replace('//', '/').rstrip('/') + '/'
+                        
                         content.append({
-                            'title': file.replace('.md', ''),
+                            'title': title,
                             'content': html_content,
                             'url': url
                         })

@@ -5,9 +5,9 @@
     "url": "/ua/search/"
   },
   {
-    "title": "_index",
+    "title": "docs",
     "content": "<hr />\n<p>title: \"Документація\"\nlinkTitle: \"Документація\"\nweight: 20\ntype: list\nmenu:\n  main:\n    weight: 20</p>\n<hr />\n<p>На цьому порталі з документацією ви знайдете відомості про генератори статичних сайтів та інші інструменти для технічних письменників. Цей сайт зроблений на основі теми Docsy за допомогою генератора статичних сайтів Hugo.</p>\n<h2>Пошук у Словниках України Онлайн у 20 томах</h2>\n<p>Щоб подивитися значення слова, введіть його у формі пошуку. На цей момент видано лише 13 томів словника. У словнику доступні слова від <strong>А</strong> до <strong>Преференція</strong>.</p>\n<form target=\"_blank\" action=\"https://sum20ua.com/List/Search/\" method=\"get\"><input id=\"SearchInput\" name=\"searchWord\" pattern=\"[A-za-zА-Яа-я\\sЇїЁёЄєІі]+\" type=\"text\" value=\"\" />\n<input type=\"submit\" value=\" Тлумачення \">\n</form>\n<p><br></br>\nСайт для аудіофілів:</p>\n<p><a href=\"https://audiophilesoft.com\" title=\"Audiophile's Software\"><img src=\"https://audiophilesoft.com/as-small.png\" alt=\"Audiophile's Software\" width=\"80\" height=\"15\"></a></p>\n<div id=\"chatbot-toggle\">Чат</div>\n<div id=\"chatbot\" style=\"display: none;\">\n  <div id=\"chatbot-header\">\n    <span>Чат-бот</span>\n    <button id=\"chatbot-close\">×</button>\n  </div>\n  <div id=\"chat-messages\"></div>\n  <div id=\"chat-input-area\">\n    <input type=\"text\" id=\"user-input\" placeholder=\"Напишіть питання...\">\n    <button id=\"ask-button\">Надіслати</button>\n  </div>\n</div>\n\n<style>\n#chatbot-toggle {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n  background-color: #007bff;\n  color: white;\n  padding: 10px 20px;\n  border-radius: 5px;\n  cursor: pointer;\n  z-index: 1000;\n}\n\n#chatbot {\n  position: fixed;\n  bottom: 70px;\n  right: 20px;\n  width: 300px;\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  background-color: white;\n  box-shadow: 0 0 10px rgba(0,0,0,0.1);\n  z-index: 1000;\n  display: flex;\n  flex-direction: column;\n}\n\n#chatbot-header {\n  background-color: #007bff;\n  color: white;\n  padding: 10px;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n\n#chatbot-close {\n  background: none;\n  border: none;\n  color: white;\n  font-size: 20px;\n  cursor: pointer;\n}\n\n#chat-messages {\n  height: 200px;\n  overflow-y: auto;\n  padding: 10px;\n  border-bottom: 1px solid #eee;\n}\n\n#chat-input-area {\n  display: flex;\n  flex-direction: column;\n  padding: 10px;\n}\n\n#user-input {\n  width: 100%;\n  padding: 10px;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n  margin-bottom: 10px;\n}\n\n#ask-button {\n  align-self: center;\n  padding: 10px 20px;\n  background-color: #007bff;\n  color: white;\n  border: none;\n  border-radius: 3px;\n  cursor: pointer;\n  white-space: nowrap;\n}\n</style>\n\n<script>\ndocument.addEventListener('DOMContentLoaded', function() {\n  const chatbot = document.getElementById('chatbot');\n  const chatbotToggle = document.getElementById('chatbot-toggle');\n  const chatbotClose = document.getElementById('chatbot-close');\n  const chatMessages = document.getElementById('chat-messages');\n  const userInput = document.getElementById('user-input');\n  const askButton = document.getElementById('ask-button');\n  let articles = [];\n\n  // Toggle chatbot visibility\n  chatbotToggle.addEventListener('click', function() {\n    chatbot.style.display = chatbot.style.display === 'none' ? 'flex' : 'none';\n  });\n\n  chatbotClose.addEventListener('click', function() {\n    chatbot.style.display = 'none';\n  });\n\n  // Load the articles when the page loads\n  fetch('/content-ua.json')\n    .then(response => response.json())\n    .then(data => {\n      articles = data;\n      console.log('Статті завантажено:', articles.length);\n    })\n    .catch(error => console.error('Помилка завантаження вмісту:', error));\n\n  function askQuestion() {\n    console.log('askQuestion викликано');\n    const question = userInput.value.toLowerCase();\n    userInput.value = '';\n\n    chatMessages.innerHTML += `<p><strong>Ви:</strong> ${question}</p>`;\n\n    // Search for relevant articles\n    const relevantArticles = articles.filter(article => \n      article.content.toLowerCase().includes(question) ||\n      article.title.toLowerCase().includes(question)\n    );\n\n    if (relevantArticles.length > 0) {\n      let response = \"Я знайшов ці відповідні статті:<br>\";\n      relevantArticles.forEach(article => {\n        response += `- <a href=\"${article.url}\">${article.title}</a><br>`;\n      });\n      chatMessages.innerHTML += `<p><strong>Бот:</strong> ${response}</p>`;\n    } else {\n      chatMessages.innerHTML += `<p><strong>Бот:</strong> Вибачте, я не зміг знайти жодної статті, пов'язаної з вашим запитанням.</p>`;\n    }\n\n    // Scroll to the bottom of the chat messages\n    chatMessages.scrollTop = chatMessages.scrollHeight;\n  }\n\n  // Add click event listener to the button\n  askButton.addEventListener('click', askQuestion);\n\n  // Add keypress event listener to the input field\n  userInput.addEventListener('keypress', function(e) {\n    if (e.key === 'Enter') {\n      askQuestion();\n    }\n  });\n});\n</script>",
-    "url": "/ua/docs/_index/"
+    "url": "/ua/docs/"
   },
   {
     "title": "build-error",
@@ -20,9 +20,9 @@
     "url": "/ua/docs/madcap-flare/connect-madcap-to-git/"
   },
   {
-    "title": "_index",
+    "title": "madcap-flare",
     "content": "<hr />\n<p>title: \"MadCap Flare\"\nlinkTitle: \"MadCap Flare\"\nweight: 5\ndescription: &gt;\n  Поради щодо використання MadCap Flare.</p>\n<hr />\n<p>{{% pageinfo %}}\nУ цьому розділі наведено поради щодо використання MadCap Flare.\n{{% /pageinfo %}}</p>\n<p>У цих інструкціях я ділюся досвідом роботи з MadCap Flare. Ви можете використовувати цей інструмент, щоб створювати онлайн-довідку у форматі HTML5 або PDF з єдиного джерела.</p>",
-    "url": "/ua/docs/madcap-flare/_index/"
+    "url": "/ua/docs/madcap-flare/"
   },
   {
     "title": "docs-as-code-tools-for-technical-writer",
@@ -75,9 +75,9 @@
     "url": "/ua/docs/static-site-generators/remove-hugo/"
   },
   {
-    "title": "_index",
+    "title": "static-site-generators",
     "content": "<hr />\n<p>title: \"Генератори статичних сайтів\"\nlinkTitle: \"Генератори статичних сайтів\"\nweight: 3\ndescription: &gt;\n  Дізнайтеся, як використовувати різноманітні генератори статичних сайтів.</p>\n<hr />\n<p>{{% pageinfo %}}\nУ цьому розділі йдеться про налаштування різноманітних генераторів статичних сайтів.\n{{% /pageinfo %}}</p>\n<p>У цих інструкціях я розповім про мій досвід налаштування генераторів статичних сайтів: Jekyll, Hugo тощо.</p>",
-    "url": "/ua/docs/static-site-generators/_index/"
+    "url": "/ua/docs/static-site-generators/"
   },
   {
     "title": "configure-vale",
@@ -95,8 +95,8 @@
     "url": "/ua/docs/vale/vale-styleguides/"
   },
   {
-    "title": "_index",
+    "title": "vale",
     "content": "<hr />\n<p>title: \"Лінтер Vale\"\nlinkTitle: \"Лінтер Vale\"\nweight: 4\ndescription: &gt;\n  Дізнайтеся, як налаштувати та використовувати лінтер Vale linter.</p>\n<hr />\n<p>{{% pageinfo %}}\nУ цьому розділі наведено покрокові вказівки щодо встановлення та використання лінтера Vale.\n{{% /pageinfo %}}</p>\n<p>У цих інструкціях я ділюсь досвідом встановлення та використання лінтера Vale linter. Щоб дізнатись більше про Vale, див. <a href=\"https://docs.errata.ai/vale/about\">документацію Vale</a>.</p>\n<p>Розробники використовують лінтери для автоматичної перевірки якості коду. Щоб дізнатися більше про лінтери, див. статтю <a href=\"https://sourcelevel.io/blog/what-is-a-linter-and-why-your-team-should-use-it\">Що таке лінтер, і чому ваша команда повинна ним користуватися?</a></p>\n<p>Техрайтери використовують лінтер Vale linter, щоб перевіряти, чи відповідає текст у їх файлах Markdown (HTML, AsciiDoc тощо) вимогам стайлгайдів Microsoft, Google тощо. Файл конфігурації Vale містить шлях до папки стайлгайдів. Кожен стайлгайд має свої правила у вигляді регулярних виразів. Коли ви запускаєте Vale, він шукає слова та вирази у вашому тексті та показує помилки та невідповідність підключеним стайлгайдам. Крім того, ви можете створити список прийнятих слів та список слів, які слід відхилити. Vale виводить попередження, якщо ви використовуєте слова зі списку відхилених.</p>",
-    "url": "/ua/docs/vale/_index/"
+    "url": "/ua/docs/vale/"
   }
 ]
