@@ -34,7 +34,7 @@ The Russians have started their bloody war in Ukraine, deliberately killing thou
 
 This Documentation Portal provides information on static site generators and other tools for technical writers. This site is built using the Docsy theme and Hugo static site generator.
 
-<div id="chatbot-toggle">Chat</div>
+<div id="chatbot-toggle">Ask chatbot</div>
 <div id="chatbot" style="display: none;">
   <div id="chatbot-header">
     <span>Chatbot</span>

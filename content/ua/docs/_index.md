@@ -22,7 +22,7 @@ menu:
 
 <a href="https://audiophilesoft.com" title="Audiophile's Software"><img src="https://audiophilesoft.com/as-small.png" alt="Audiophile's Software" width="80" height="15"></a>
 
-<div id="chatbot-toggle">Чат</div>
+<div id="chatbot-toggle">Запитай чат-бота</div>
 <div id="chatbot" style="display: none;">
   <div id="chatbot-header">
     <span>Чат-бот</span>
