@@ -5,7 +5,7 @@ weight: 10
 description: Reference for the Pet Store API
 ---
 
-{{< redoc "https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v2.0/yaml/petstore.yaml" >}}
+{{< redoc "https://petstore.swagger.io/v2/swagger.json" >}}
 
 <div id="chatbot-toggle">Ask chatbot</div>
 <div id="chatbot" style="display: none;">
