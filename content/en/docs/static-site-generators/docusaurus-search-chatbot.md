@@ -401,11 +401,18 @@ And this is how the chatbot dialog window looks when you click the button:
 
 The links to the documentation articles are clickable. The button stays at the bottom even when you scroll the page. To try this out, go to my test site here: https://ivan-documentation-example.netlify.app/
 
-
-
-
-
-
+<div id="chatbot-toggle">Ask chatbot</div>
+<div id="chatbot" style="display: none;">
+  <div id="chatbot-header">
+    <span>Chatbot</span>
+    <button id="chatbot-close">×</button>
+  </div>
+  <div id="chat-messages"></div>
+  <div id="chat-input-area">
+    <input type="text" id="user-input" placeholder="Ask a question...">
+    <button id="ask-button">Send</button>
+  </div>
+</div>
 
 <style>
 #chatbot-toggle {
