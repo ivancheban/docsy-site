@@ -20,7 +20,7 @@ To add the lunr.js search plugin, you must have installed:
 
 * **Node.js.** Run `node --version` in your Command Prompt to see if it's installed. If you don't see the version, download the installer here: [https://nodejs.org/en](https://nodejs.org/en).
 
-* **Docusaurus**. Run `npx docusaurus --version`. If you don't see the version of Docusaurus, install it using [these instructions](../docs-as-code/#docusaurus-static-site-generator).
+* **Docusaurus**. Run `npx docusaurus --version` in the folder with your Docusaurus project. If you don't see the version of Docusaurus, install it using [these instructions](../docs-as-code/#docusaurus-static-site-generator).
 
 ## How to install lunr.js
 
